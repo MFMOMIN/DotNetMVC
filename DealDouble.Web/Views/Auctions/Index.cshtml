@@ -3,51 +3,72 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-<table>
-    <thead>
-        <tr>
-            <th>
-                ID
-            </th>
-            <th>
-                Title
-            </th>
-            <th>
-                Description
-            </th>
-            <th>
-                ActualAmount
-            </th>
-            <th>
-                StartingTime
-            </th>
-            <th>
-                EndTime
-            </th>
-            <th>
-                Action
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var auction in Model)
-        {
-        <tr>
-            <td>@auction.Id</td>
-            <td>@auction.Title</td>
-            <td>@auction.Description</td>
-            <td>@auction.ActualAmount</td>
-            <td>@auction.StartingTime</td>
-            <td>@auction.EndTime</td>
-            <td>
-                <button>
-                    Delete
-                </button>
-            </td>
-        </tr>
-        }
+<div id="listingArea">
+    <h2>Index</h2>
 
-    </tbody>
-</table>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    ActualAmount
+                </th>
+                <th>
+                    StartingTime
+                </th>
+                <th>
+                    EndTime
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var auction in Model)
+            {
+                <tr>
+                    <td>@auction.Id</td>
+                    <td>@auction.Title</td>
+                    <td>@auction.Description</td>
+                    <td>@auction.ActualAmount</td>
+                    <td>@auction.StartingTime</td>
+                    <td>@auction.EndTime</td>
+                    <td>
+                        <button>
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    <div>
+        <button type="button" id="createButton">
+            Create Auction
+        </button>
+    </div>
+    <div id="contentArea"></div>
+
+    <script>
+        $("#createButton").click(function () {
+            $.ajax({
+                url: "/Auctions/Create",
+                method: "get"
+            }).done(function (response) {
+                debugger;
+                $("#contentArea").html(response);
+            });
+        });
+    </script>
+</div>
 
