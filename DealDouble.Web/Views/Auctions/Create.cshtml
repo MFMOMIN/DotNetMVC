@@ -4,28 +4,26 @@
 }
 
 <h2>Create</h2>
-<form id = "createForm" method="post" action="Auctions/Create/">
-    <label>Title</label>
-    <input name="Title" />
-    <br />
+<form id="createForm" class="row g-3" method="post" action="Auctions/Create/">
+    <div class="col-md-4">
+        <label for="formGroupExampleInput" class="form-label">Title</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter a title" name="Title" />
 
-    <label>Description</label>
-    <input name="Description" />
-    <br />
+        <label for="formGroupExampleInput" class="form-label">Description</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter a Description" name="Description" />
 
-    <label>ActualAmount</label>
-    <input name="ActualAmount"/>
-    <br />
+        <label for="formGroupExampleInput" class="form-label">ActualAmount</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter a Amount" name="ActualAmount" />
 
-    <label>StartingTime</label>
-    <input name="StartingTime"/>
-    <br />
+        <label for="formGroupExampleInput" class="form-label">StartingTime</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter a StartingTime" name="StartingTime" />
 
-    <label>EndTime</label>
-    <input name="EndTime"/>
-    <br />
+        <label for="formGroupExampleInput" class="form-label">EndTime</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter a EndTime" name="EndTime" />
 
-    <button id="saveButton" type="button">Save</button>
+        <br />
+        <button id="saveButton" class="btn btn-success" type="button">Save</button>
+</div>
 </form>
 
 <script>
